@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://agmusique.github.io/sitemap.xml
