@@ -376,6 +376,19 @@
       }
       .confirm h3 { margin: 0 0 4px; font-size: 1.3rem; }
       .confirm p { margin: 0; color: var(--ink-soft); }
+      .access-code {
+        margin: 18px 0 4px;
+        background: var(--surface-2);
+        border: 1.5px dashed var(--violet); border-radius: 12px;
+        padding: 18px 20px;
+      }
+      .access-code h4 { margin: 0 0 6px; font-size: 1.08rem; }
+      .access-code .code-value {
+        font-size: clamp(1.7rem, 6vw, 2.3rem); font-weight: 900;
+        letter-spacing: 0.06em; line-height: 1.15; margin: 0 0 8px;
+        overflow-wrap: anywhere;
+      }
+      .access-code p { margin: 0 0 14px; }
       .recap {
         background: var(--surface-2); border: 1px solid var(--line); border-radius: 12px;
         padding: 16px 18px; white-space: pre-wrap; font-size: 0.95rem; line-height: 1.6;
@@ -956,6 +969,12 @@
                 <p>Voici le récapitulatif de ton inscription. Copie-le et envoie-le à l'académie (par courriel ou par message sur la page Facebook de VOCALEKS) pour finaliser ton inscription.</p>
               </div>
             </div>
+            <div class="access-code">
+              <h4>Ton code d'accès Zone étudiant</h4>
+              <p class="code-value" id="access-code-value">VOCALEKS-XXXXXX</p>
+              <p>Conserve ce code précieusement&nbsp;: il te servira à activer ton accès sur la plateforme élèves. Le contenu exclusif (capsules, retours vidéo et séances) se débloquera dès que ton paiement sera reçu.</p>
+              <a class="btn btn-grad" href="https://agmusique.github.io/vocalekscoaching/" target="_blank" rel="noopener">Activer mon accès</a>
+            </div>
             <div class="recap" id="recap"></div>
             <div class="depot-panel" id="depot-panel">
               <h4>Dernière étape&nbsp;: paie ton dépôt pour réserver ta place</h4>
@@ -1013,6 +1032,19 @@
         }
 
         var INTERAC_EMAIL = 'alexandre.guimond@hotmail.com';
+        function genAccessCode() {
+          var chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
+          var out = '';
+          var i;
+          if (window.crypto && window.crypto.getRandomValues) {
+            var bytes = new Uint8Array(6);
+            window.crypto.getRandomValues(bytes);
+            for (i = 0; i < 6; i++) out += chars[bytes[i] % chars.length];
+          } else {
+            for (i = 0; i < 6; i++) out += chars[Math.floor(Math.random() * chars.length)];
+          }
+          return 'VOCALEKS-' + out;
+        }
         function fmt(n) {
           if (Math.round(n) === n) return n + ' $';
           return n.toFixed(2).replace('.', ',') + ' $';
@@ -1095,9 +1127,13 @@
           var dispos = [];
           form.querySelectorAll('input[name="dispo"]:checked').forEach(function (c) { dispos.push(c.value); });
 
+          var accessCode = genAccessCode();
+          document.getElementById('access-code-value').textContent = accessCode;
+
           var lines = [];
           lines.push('INSCRIPTION VOCALEKS • Académie de Chant');
           lines.push('----------------------------------------');
+          lines.push('Code d\'accès Zone étudiant : ' + accessCode);
           lines.push('Nom : ' + val('f-prenom') + ' ' + val('f-nom'));
           lines.push('Courriel : ' + email);
           if (val('f-tel')) lines.push('Téléphone : ' + val('f-tel'));
