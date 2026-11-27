@@ -110,6 +110,50 @@
       .hero-img { width: 100%; height: auto; }
       .hero-img-wrap { line-height: 0; }
 
+      /* ---------- Offre de lancement ---------- */
+      .founder-sec { padding-top: 34px; }
+      .founder {
+        background: var(--navy); color: #f4f2ff;
+        border-radius: 18px; padding: 30px 26px 32px;
+        box-shadow: var(--shadow);
+        border: 2px solid transparent;
+        background:
+          linear-gradient(var(--navy), var(--navy)) padding-box,
+          var(--grad) border-box;
+      }
+      @media (min-width: 760px) { .founder { padding: 38px 42px 40px; } }
+      .founder .tag-launch {
+        display: inline-block; font-size: 0.78rem; font-weight: 800;
+        letter-spacing: 0.08em; text-transform: uppercase;
+        padding: 6px 13px; border-radius: 999px;
+        background: var(--grad); color: #fff;
+      }
+      .founder h2 { color: #fff; margin-top: 16px; }
+      .founder .founder-lede { color: #d8d4f7; margin: 0 0 20px; max-width: 62ch; }
+      .founder-grid { display: grid; gap: 22px; }
+      @media (min-width: 760px) { .founder-grid { grid-template-columns: 1.15fr 0.85fr; gap: 34px; align-items: start; } }
+      .founder ul { margin: 0; padding-left: 20px; color: #e6e2ff; }
+      .founder ul li { margin: 5px 0; }
+      .founder .exchange {
+        margin: 18px 0 0; color: #d8d4f7; font-size: 0.95rem;
+        border-top: 1px dashed #57509e; padding-top: 14px;
+      }
+      .founder .exchange strong { color: #fff; }
+      .founder-price {
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid #57509e; border-radius: var(--radius);
+        padding: 20px 22px; text-align: left;
+      }
+      .founder-price .now { font-size: 2.4rem; font-weight: 900; line-height: 1; color: #fff; }
+      .founder-price .now small { font-size: 0.95rem; font-weight: 600; color: #c9c4f2; }
+      .founder-price .was { color: #c9c4f2; margin: 6px 0 0; }
+      .founder-price .was s { color: #ff9d94; }
+      .founder-price .places {
+        margin: 14px 0 18px; font-weight: 700; color: #fff;
+        font-size: 0.95rem;
+      }
+      .founder-price .btn { width: 100%; }
+
       /* ---------- Sections ---------- */
       section { padding: 52px 0 8px; }
       h2 {
@@ -278,6 +322,93 @@
       .copied-msg { color: var(--ok); font-weight: 700; font-size: 0.9rem; align-self: center; display: none; }
       .copied-msg.show { display: inline; }
 
+      /* ---------- Promo à l'ouverture ---------- */
+      .promo-overlay {
+        position: fixed; inset: 0; z-index: 1000;
+        background: rgba(8, 6, 30, 0.82);
+        -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
+        display: flex; align-items: center; justify-content: center;
+        padding: 16px;
+        opacity: 0; pointer-events: none;
+        transition: opacity 0.28s ease;
+      }
+      .promo-overlay.open { opacity: 1; pointer-events: auto; }
+      .promo-card {
+        position: relative; width: 100%; max-width: 680px; max-height: 92vh; overflow: auto;
+        background: var(--navy); color: #f4f2ff;
+        border-radius: 22px; padding: 34px 26px 30px;
+        text-align: center;
+        border: 2px solid transparent;
+        background:
+          linear-gradient(var(--navy), var(--navy)) padding-box,
+          var(--grad) border-box;
+        box-shadow: 0 24px 70px rgba(0,0,0,0.5);
+        transform: translateY(14px) scale(0.98);
+        transition: transform 0.28s ease;
+      }
+      .promo-overlay.open .promo-card { transform: translateY(0) scale(1); }
+      @media (min-width: 640px) { .promo-card { padding: 44px 48px 38px; } }
+      @media (prefers-reduced-motion: reduce) {
+        .promo-overlay, .promo-card { transition: none; }
+        .promo-card { transform: none; }
+      }
+      .promo-close {
+        position: absolute; top: 12px; right: 12px;
+        width: 42px; height: 42px; border-radius: 50%;
+        border: 1.5px solid #57509e; background: rgba(255,255,255,0.06);
+        color: #fff; font-size: 1.35rem; line-height: 1; cursor: pointer;
+        display: inline-flex; align-items: center; justify-content: center;
+        font-family: inherit;
+      }
+      .promo-close:hover { background: rgba(255,255,255,0.14); }
+      .promo-badge {
+        display: inline-block; background: var(--grad); color: #fff;
+        font-weight: 900; letter-spacing: 0.09em; text-transform: uppercase;
+        font-size: 0.8rem; padding: 8px 16px; border-radius: 999px;
+      }
+      .promo-card h2.promo-title {
+        color: #fff; font-size: clamp(1.9rem, 6vw, 2.9rem); line-height: 1.05;
+        margin: 18px 0 8px; letter-spacing: -0.02em;
+      }
+      .promo-card h2.promo-title .hl {
+        background: var(--grad);
+        -webkit-background-clip: text; background-clip: text;
+        -webkit-text-fill-color: transparent; color: transparent;
+      }
+      .promo-sub { color: #d8d4f7; margin: 0 auto; max-width: 48ch; font-size: 1.02rem; }
+      .promo-price {
+        display: flex; align-items: baseline; justify-content: center; gap: 12px; flex-wrap: wrap;
+        margin: 22px 0 4px;
+      }
+      .promo-price .now { font-size: clamp(3.6rem, 11vw, 5.2rem); font-weight: 900; line-height: 0.95; color: #fff; }
+      .promo-price .per { font-size: 1.05rem; font-weight: 700; color: #c9c4f2; text-align: left; line-height: 1.25; }
+      .promo-price .per strong { color: #fff; display: block; font-size: 1.15rem; }
+      .promo-was { color: #c9c4f2; margin: 0; font-size: 1rem; }
+      .promo-was s { color: #ff9d94; font-weight: 700; }
+      .promo-was strong { color: #fff; }
+      .promo-includes {
+        list-style: none; margin: 22px auto 0; padding: 18px 0 0;
+        border-top: 1px dashed #57509e;
+        display: grid; gap: 8px; text-align: left; max-width: 440px;
+        color: #e6e2ff; font-size: 0.98rem;
+      }
+      .promo-includes li { display: flex; gap: 10px; align-items: flex-start; }
+      .promo-includes li::before { content: "✓"; color: var(--coral); font-weight: 900; flex: none; }
+      .promo-places {
+        margin: 20px 0 0; font-weight: 900; color: #fff; font-size: 1.05rem;
+        text-transform: uppercase; letter-spacing: 0.04em;
+      }
+      .promo-places span { color: var(--coral); }
+      .promo-cta { margin-top: 16px; width: 100%; font-size: 1.12rem; min-height: 58px; }
+      @media (min-width: 640px) { .promo-cta { width: auto; padding: 14px 34px; } }
+      .promo-dismiss {
+        display: inline-block; margin-top: 14px; background: none; border: 0; cursor: pointer;
+        color: #c9c4f2; font: inherit; font-size: 0.92rem; font-weight: 600;
+        text-decoration: underline; text-underline-offset: 3px; padding: 8px;
+      }
+      .promo-dismiss:hover { color: #fff; }
+      .promo-fine { color: #9a94c9; font-size: 0.82rem; margin: 10px 0 0; }
+
       footer {
         margin-top: 56px; background: var(--navy); color: #c9c4f2;
         padding: 30px 0 36px; font-size: 0.92rem;
@@ -287,6 +418,31 @@
     </style>
   </head>
   <body>
+    <!-- Promo à l'ouverture : cohorte fondatrice -->
+    <div class="promo-overlay" id="promo-overlay" role="dialog" aria-modal="true" aria-labelledby="promo-title" aria-describedby="promo-desc" hidden>
+      <div class="promo-card">
+        <button type="button" class="promo-close" id="promo-close" aria-label="Fermer la promotion">×</button>
+        <span class="promo-badge">Offre de lancement · Places limitées</span>
+        <h2 class="promo-title" id="promo-title">Cohorte fondatrice<br /><span class="hl">30 places seulement</span></h2>
+        <p class="promo-sub" id="promo-desc">Les 30 premiers élèves de VOCALEKS obtiennent la formule <strong style="color:#fff">Académie à vie</strong> au tarif fondateur. Premiers arrivés, premiers servis.</p>
+        <div class="promo-price" aria-label="39 dollars par mois à vie au lieu de 59 dollars par mois">
+          <span class="now">39&nbsp;$</span>
+          <span class="per"><strong>/ mois</strong>à vie, pour toujours</span>
+        </div>
+        <p class="promo-was">Au lieu de <s>59&nbsp;$/mois</s> — <strong>tu économises 20&nbsp;$ chaque mois</strong></p>
+        <ul class="promo-includes">
+          <li>Toutes les vidéos de ton niveau</li>
+          <li>1 retour vidéo personnalisé chaque semaine</li>
+          <li>Communauté privée + live hebdomadaire</li>
+        </ul>
+        <p class="promo-places">Plus que <span>30 places</span> — après, c'est fini</p>
+        <button type="button" class="btn btn-grad promo-cta" id="promo-cta">Je réserve ma place — 39&nbsp;$/mois à vie</button>
+        <br />
+        <button type="button" class="promo-dismiss" id="promo-dismiss">Non merci, découvrir le site</button>
+        <p class="promo-fine">En échange : un témoignage (vidéo ou écrit) après ton premier mois. Aucun paiement demandé à l'inscription.</p>
+      </div>
+    </div>
+
     <header class="hero">
       <div class="wrap hero-inner">
         <div class="brand">
@@ -308,6 +464,33 @@
     </header>
 
     <main class="wrap">
+      <!-- Offre de lancement : cohorte fondatrice -->
+      <section class="founder-sec" id="offre" aria-labelledby="h-fondatrice">
+        <div class="founder">
+          <span class="tag-launch">Offre de lancement</span>
+          <h2 id="h-fondatrice">Cohorte fondatrice VOCALEKS — 30 places</h2>
+          <p class="founder-lede">Les 30 premiers élèves de l'académie obtiennent la formule Académie à tarif réduit <strong style="color:#fff">à vie</strong>. Premiers arrivés, premiers servis&nbsp;: l'offre se ferme dès que les 30 places sont prises.</p>
+          <div class="founder-grid">
+            <div>
+              <p style="margin:0 0 8px; font-weight:700; color:#fff;">Tout ce qu'inclut la formule Académie&nbsp;:</p>
+              <ul>
+                <li>Toutes les vidéos de ton niveau</li>
+                <li>1 retour vidéo personnalisé chaque semaine</li>
+                <li>Communauté privée des élèves</li>
+                <li>Live hebdomadaire, passage chanté prioritaire</li>
+              </ul>
+              <p class="exchange"><strong>En échange&nbsp;:</strong> un témoignage — vidéo ou écrit — après ton premier mois. C'est tout.</p>
+            </div>
+            <div class="founder-price">
+              <div class="now">39&nbsp;$<small> / mois, à vie</small></div>
+              <p class="was">Formule Académie régulière&nbsp;: <s>59&nbsp;$/mois</s> — tu économises 20&nbsp;$ chaque mois, pour toujours.</p>
+              <p class="places">30 places seulement. Quand elles sont prises, l'offre disparaît.</p>
+              <a class="btn btn-grad" href="#inscription">Je réserve ma place</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <!-- Niveaux -->
       <section id="niveaux" aria-labelledby="h-niveaux">
         <h2 id="h-niveaux">Les 3 niveaux</h2>
@@ -382,6 +565,7 @@
               <li>Communauté privée des élèves</li>
               <li>Live hebdomadaire, passage chanté prioritaire</li>
             </ul>
+            <p class="price-line"><strong>Cohorte fondatrice&nbsp;: 39&nbsp;$/mois à vie</strong> — offre de lancement, 30 places. <a href="#offre">Voir l'offre</a></p>
           </article>
           <article class="card">
             <h3>Coaching+</h3>
@@ -534,6 +718,10 @@
               <legend><span class="step" aria-hidden="true">3</span> Ta formule</legend>
               <span class="group-label" id="lbl-formule">Formule ou option choisie <span class="req" aria-hidden="true">*</span></span>
               <div class="choices choices-2" role="radiogroup" aria-labelledby="lbl-formule">
+                <label class="choice">
+                  <input type="radio" name="formule" value="Cohorte fondatrice — Académie 39 $/mois à vie (offre de lancement, 30 places, témoignage après le 1er mois)" />
+                  <span><strong>Cohorte fondatrice — 39&nbsp;$/mois à vie</strong><small>Offre de lancement · Académie au lieu de 59&nbsp;$ · 30 places · témoignage après le 1<sup>er</sup> mois</small></span>
+                </label>
                 <label class="choice">
                   <input type="radio" name="formule" value="Autonome — 29 $/mois" />
                   <span><strong>Autonome — 29&nbsp;$/mois</strong><small>Vidéos, exercices audio, fiches PDF</small></span>
@@ -759,6 +947,57 @@
           confirmBox.classList.remove('show');
           form.style.display = '';
           form.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+      })();
+    </script>
+    <script>
+      (function () {
+        var overlay = document.getElementById('promo-overlay');
+        if (!overlay) return;
+        var closeBtn = document.getElementById('promo-close');
+        var dismissBtn = document.getElementById('promo-dismiss');
+        var ctaBtn = document.getElementById('promo-cta');
+        var lastFocus = null;
+
+        function openPromo() {
+          lastFocus = document.activeElement;
+          overlay.hidden = false;
+          // Force reflow so the transition runs
+          void overlay.offsetWidth;
+          overlay.classList.add('open');
+          document.body.style.overflow = 'hidden';
+          if (ctaBtn) ctaBtn.focus();
+        }
+        function closePromo() {
+          overlay.classList.remove('open');
+          document.body.style.overflow = '';
+          setTimeout(function () { overlay.hidden = true; }, 300);
+          if (lastFocus && lastFocus.focus) lastFocus.focus();
+        }
+
+        // Show big promo on site opening
+        setTimeout(openPromo, 450);
+
+        if (closeBtn) closeBtn.addEventListener('click', closePromo);
+        if (dismissBtn) dismissBtn.addEventListener('click', closePromo);
+        overlay.addEventListener('click', function (ev) {
+          if (ev.target === overlay) closePromo();
+        });
+        document.addEventListener('keydown', function (ev) {
+          if (ev.key === 'Escape' && !overlay.hidden) closePromo();
+        });
+
+        if (ctaBtn) ctaBtn.addEventListener('click', function () {
+          // Pre-select the founder offer in the form
+          var radios = document.querySelectorAll('input[name="formule"]');
+          radios.forEach(function (r) {
+            if (r.value.indexOf('Cohorte fondatrice') === 0) r.checked = true;
+          });
+          closePromo();
+          setTimeout(function () {
+            var target = document.getElementById('inscription');
+            if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }, 60);
         });
       })();
     </script>
