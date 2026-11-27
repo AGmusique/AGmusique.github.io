@@ -1,0 +1,22 @@
+name: Renommer le fichier en index.html
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  renommer:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Récupérer le dépôt
+        uses: actions/checkout@v4
+      - name: Renommer le fichier en index.html
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git mv site-officiel-alexandre-guimond.html index.html
+          git status
+          git commit -m "Renommer site-officiel-alexandre-guimond.html en index.html"
+          git push origin main
