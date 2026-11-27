@@ -5,19 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta name="color-scheme" content="light dark" />
     <link rel="icon" href="data:," />
-    <title>VOCALEKS — Académie de chant en ligne | Inscription</title>
-    <meta name="description" content="Apprends à chanter de chez toi, à ton rythme avec VOCALEKS, l'académie de chant en ligne par Alexandre Guimond. Débutant, Intermédiaire, Avancé. Cours privé 60 min 29 $ ou capsules vidéo 52 $/mois." />
+    <title>VOCALEKS • Académie de Chant</title>
+    <meta name="description" content="Apprends à chanter de chez toi, à ton rythme avec VOCALEKS • Académie de Chant, par Alexandre Guimond. Débutant, Intermédiaire, Avancé. Cours privé 60 min 29 $ ou capsules vidéo 52 $/mois. Service de composition : écriture de paroles et création de chansons originales." />
     <link rel="canonical" href="https://agmusique.github.io/inscription-vocaleks.html" />
-    <meta property="og:title" content="VOCALEKS — Académie de chant en ligne | Inscription" />
-    <meta property="og:description" content="Apprends à chanter de chez toi, à ton rythme avec VOCALEKS, l'académie de chant en ligne par Alexandre Guimond. Débutant, Intermédiaire, Avancé. Cours privé 60 min 29 $ ou capsules vidéo 52 $/mois." />
+    <meta property="og:site_name" content="VOCALEKS • Académie de Chant" />
+    <meta property="og:title" content="VOCALEKS • Académie de Chant" />
+    <meta property="og:description" content="Apprends à chanter de chez toi, à ton rythme avec VOCALEKS • Académie de Chant, par Alexandre Guimond. Débutant, Intermédiaire, Avancé. Cours privé 60 min 29 $ ou capsules vidéo 52 $/mois." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://agmusique.github.io/inscription-vocaleks.html" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="VOCALEKS • Académie de Chant" />
+    <meta name="twitter:description" content="Apprends à chanter de chez toi, à ton rythme avec VOCALEKS • Académie de Chant, par Alexandre Guimond. Débutant, Intermédiaire, Avancé. Cours privé 60 min 29 $ ou capsules vidéo 52 $/mois." />
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Course",
-      "name": "VOCALEKS — Académie de chant en ligne",
-      "description": "Apprends à chanter de chez toi, à ton rythme avec VOCALEKS, l'académie de chant en ligne par Alexandre Guimond. Trois niveaux : Débutant, Intermédiaire, Avancé. Cours privé de 60 min à 29 $ ou accès complet aux capsules vidéo à 52 $/mois, coaching de 15 min par mois inclus.",
+      "name": "VOCALEKS • Académie de Chant",
+      "description": "Apprends à chanter de chez toi, à ton rythme avec VOCALEKS • Académie de Chant, par Alexandre Guimond. Trois niveaux : Débutant, Intermédiaire, Avancé. Cours privé de 60 min à 29 $ ou accès complet aux capsules vidéo à 52 $/mois, coaching de 15 min par mois inclus.",
       "provider": {
         "@type": "Person",
         "name": "Alexandre Guimond"
@@ -226,6 +230,31 @@
       .mention p { margin: 0; color: var(--ink-soft); }
       .mention strong { color: var(--ink); }
 
+      @media (min-width: 760px) { .grid-2 { grid-template-columns: repeat(2, 1fr); } }
+      .tag-paroles { background: #c2437a; }
+      .tag-compo { background: #1f6f8b; }
+      .creation-steps {
+        margin-top: 18px; background: var(--surface); border: 1px solid var(--line);
+        border-radius: var(--radius); box-shadow: var(--shadow); padding: 22px 22px 10px;
+      }
+      .creation-steps h3 { margin: 0 0 14px; font-size: 1.08rem; }
+      .creation-steps ol {
+        list-style: none; margin: 0; padding: 0; display: grid; gap: 14px;
+      }
+      @media (min-width: 760px) { .creation-steps ol { grid-template-columns: repeat(4, 1fr); } }
+      .creation-steps li { color: var(--ink-soft); font-size: 0.95rem; }
+      .creation-steps li strong { display: block; color: var(--ink); margin-bottom: 3px; }
+      .creation-steps .num {
+        display: inline-flex; align-items: center; justify-content: center;
+        width: 26px; height: 26px; border-radius: 50%; background: var(--grad);
+        color: #fff; font-weight: 800; font-size: 0.85rem; margin-bottom: 7px;
+      }
+      .creation-note {
+        margin-top: 18px; display: flex; gap: 14px; flex-wrap: wrap; align-items: center;
+        justify-content: space-between;
+      }
+      .creation-note p { margin: 0; color: var(--ink-soft); max-width: 62ch; }
+
       /* ---------- À la carte ---------- */
       .alacarte {
         background: var(--surface); border: 1px solid var(--line);
@@ -316,6 +345,25 @@
       .btn-submit { width: 100%; font-size: 1.08rem; min-height: 54px; }
       @media (min-width: 640px) { .btn-submit { width: auto; padding: 14px 38px; } }
       .form-note { color: var(--ink-faint); font-size: 0.88rem; margin-top: 12px; }
+
+      /* ---------- Dépôt Interac ---------- */
+      .depot-box {
+        margin-top: 16px; background: var(--surface-2);
+        border: 1.5px dashed var(--violet); border-radius: 12px;
+        padding: 14px 16px; font-size: 0.95rem; color: var(--ink-soft);
+      }
+      .depot-box strong { color: var(--ink); }
+      .depot-box .depot-amount { font-size: 1.15rem; font-weight: 900; color: var(--ink); }
+      .depot-panel {
+        background: var(--surface-2); border: 1px solid var(--line);
+        border-left: 5px solid var(--violet); border-radius: 12px;
+        padding: 18px 20px; margin: 0 0 16px;
+      }
+      .depot-panel h4 { margin: 0 0 6px; font-size: 1.08rem; }
+      .depot-panel p { margin: 0 0 8px; color: var(--ink-soft); }
+      .depot-panel p:last-child { margin-bottom: 0; }
+      .depot-panel .depot-amount { font-size: 1.3rem; font-weight: 900; color: var(--ink); }
+      .depot-panel .interac-mail { font-weight: 800; color: var(--ink); }
 
       /* ---------- Confirmation ---------- */
       .confirm { display: none; }
@@ -457,7 +505,7 @@
         <button type="button" class="btn btn-grad promo-cta" id="promo-cta">Je réserve ma place — 39&nbsp;$/mois à vie</button>
         <br />
         <button type="button" class="promo-dismiss" id="promo-dismiss">Non merci, découvrir le site</button>
-        <p class="promo-fine">En échange : un témoignage (vidéo ou écrit) après ton premier mois. Aucun paiement demandé à l'inscription.</p>
+        <p class="promo-fine">En échange : un témoignage (vidéo ou écrit) après ton premier mois. Dépôt de 25 % à l'inscription, par virement Interac.</p>
       </div>
     </div>
 
@@ -466,7 +514,7 @@
         <div class="brand">
           <div>
             <div class="brand-mark"><span class="v">V</span>OCALEKS<span class="waves" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span></span></div>
-            <div class="brand-sub">Académie de chant en ligne, par Alexandre Guimond</div>
+            <div class="brand-sub">Académie de Chant, par Alexandre Guimond</div>
           </div>
         </div>
         <h1>Trouve ta voix. Assume ta scène.</h1>
@@ -653,11 +701,66 @@
                 <td class="price">25&nbsp;$</td>
               </tr>
               <tr>
+                <td>Service de composition — écriture de paroles<span class="sub">Texte de chanson sur mesure&nbsp;: couplets, refrain et pont, à partir de ton idée</span></td>
+                <td class="price">Sur mesure</td>
+              </tr>
+              <tr>
+                <td>Service de composition — création de chanson<span class="sub">Paroles et musique originales, mélodie adaptée à ta voix, démo incluse</span></td>
+                <td class="price">Sur mesure</td>
+              </tr>
+              <tr>
                 <td>Mini-cours «&nbsp;3 jours pour débloquer ta voix&nbsp;»<span class="sub">Pour découvrir l'académie avant de t'engager</span></td>
                 <td class="price free">Gratuit</td>
               </tr>
             </tbody>
           </table>
+        </div>
+      </section>
+
+      <!-- Service de composition -->
+      <section id="composition" aria-labelledby="h-composition">
+        <h2 id="h-composition">Service de composition</h2>
+        <p class="section-lede">Tu as une histoire à raconter, un message à faire passer ou une mélodie qui te trotte dans la tête&nbsp;? Le Service de composition de VOCALEKS t'accompagne pour en faire une vraie chanson — des paroles à la musique — que tu pourras chanter, offrir ou enregistrer.</p>
+        <div class="grid grid-2">
+          <article class="card">
+            <span class="tag tag-paroles">Paroles</span>
+            <h3>Écriture de paroles de chansons</h3>
+            <p>On transforme ton idée, ton vécu ou ton thème en un texte de chanson qui sonne juste et qui te ressemble. Tu peux arriver avec un simple sujet, quelques phrases, un poème ou même juste une émotion&nbsp;: on s'occupe de lui donner la forme d'une chanson.</p>
+            <ul>
+              <li>Structure complète&nbsp;: couplets, refrain, pré-refrain et pont</li>
+              <li>Refrain accrocheur, facile à retenir et à chanter</li>
+              <li>Rimes, rythme des mots et fluidité sur la musique</li>
+              <li>Ton et style adaptés&nbsp;: pop, ballade, pop-country, chanson d'amour, hommage, chanson personnalisée pour un événement</li>
+              <li>Réécriture et polissage d'un texte que tu as déjà commencé</li>
+            </ul>
+            <p class="price-line">Idéal pour&nbsp;: une première chanson originale, une dédicace, un hommage ou une chanson à offrir.</p>
+          </article>
+          <article class="card">
+            <span class="tag tag-compo">Musique</span>
+            <h3>Composition — création de chansons</h3>
+            <p>On crée la musique de ta chanson sur mesure&nbsp;: une mélodie originale pensée pour ta voix, ton niveau et l'émotion de ton texte. Tu as déjà tes paroles&nbsp;? On compose la musique par-dessus. Tu n'as que l'idée&nbsp;? On crée paroles et musique ensemble.</p>
+            <ul>
+              <li>Mélodie originale, adaptée à ta tessiture et à ton style</li>
+              <li>Accords et accompagnement de base (guitare ou piano)</li>
+              <li>Ambiance et tempo choisis selon ton intention&nbsp;: doux, entraînant, touchant</li>
+              <li>Démo simple pour entendre ta chanson et apprendre à la chanter</li>
+              <li>Coaching pour l'interpréter et la mettre en valeur avec ta voix</li>
+            </ul>
+            <p class="price-line">Résultat&nbsp;: une chanson originale complète — paroles et musique — prête à chanter.</p>
+          </article>
+        </div>
+        <div class="creation-steps">
+          <h3>Comment ça se passe</h3>
+          <ol>
+            <li><span class="num" aria-hidden="true">1</span><strong>On discute de ton idée</strong>Thème, émotion, style, pour qui et pour quelle occasion.</li>
+            <li><span class="num" aria-hidden="true">2</span><strong>On écrit et on compose</strong>Première version des paroles et de la mélodie, présentée en démo.</li>
+            <li><span class="num" aria-hidden="true">3</span><strong>Tu donnes tes retours</strong>On ajuste les mots, la mélodie et l'ambiance jusqu'à ce que ça te ressemble.</li>
+            <li><span class="num" aria-hidden="true">4</span><strong>Ta chanson est prête</strong>Texte final et démo en main, prête à chanter, à offrir ou à enregistrer.</li>
+          </ol>
+        </div>
+        <div class="creation-note">
+          <p><strong style="color:var(--ink)">Projet sur mesure&nbsp;:</strong> le tarif dépend de ton projet (paroles seules, musique seule ou chanson complète). Décris ton idée dans le formulaire — champ «&nbsp;objectifs&nbsp;» — et l'académie te revient avec une proposition adaptée. Le dépôt de 25&nbsp;% s'applique sur le total confirmé.</p>
+          <a class="btn btn-grad" href="#inscription">Lancer mon projet de chanson</a>
         </div>
       </section>
 
@@ -783,11 +886,22 @@
                   <span><strong>Atelier mensuel — 25&nbsp;$</strong><small>Pour les non-membres</small></span>
                 </label>
                 <label class="choice">
+                  <input type="radio" name="formule" value="Service de composition — écriture de paroles de chansons (projet sur mesure, tarif à confirmer)" />
+                  <span><strong>Service de composition — écriture de paroles</strong><small>Texte de chanson sur mesure, à partir de ton idée · tarif à confirmer selon le projet</small></span>
+                </label>
+                <label class="choice">
+                  <input type="radio" name="formule" value="Service de composition — création de chanson complète, paroles et musique (projet sur mesure, tarif à confirmer)" />
+                  <span><strong>Service de composition — chanson complète</strong><small>Paroles et musique originales, démo incluse · tarif à confirmer selon le projet</small></span>
+                </label>
+                <label class="choice">
                   <input type="radio" name="formule" value="Mini-cours gratuit « 3 jours pour débloquer ta voix »" />
                   <span><strong>Mini-cours gratuit</strong><small>«&nbsp;3 jours pour débloquer ta voix&nbsp;»</small></span>
                 </label>
               </div>
               <span class="error" id="e-formule">Choisis une formule ou une option.</span>
+              <div class="depot-box" id="depot-box">
+                <strong>Dépôt à l'inscription&nbsp;: 25&nbsp;% du total</strong>, par virement Interac. Choisis une formule ci-dessus pour voir le montant exact de ton dépôt.
+              </div>
             </fieldset>
 
             <fieldset>
@@ -828,7 +942,7 @@
 
             <div class="submit-row">
               <button type="submit" class="btn btn-grad btn-submit">Envoyer mon inscription</button>
-              <p class="form-note">Aucun paiement n'est demandé à cette étape. L'académie te recontacte pour confirmer ton inscription et les modalités de paiement.</p>
+              <p class="form-note">À l'envoi, tu obtiens le montant de ton dépôt — 25&nbsp;% du total, par virement Interac — et les instructions pour le payer. L'académie confirme ton inscription dès la réception du dépôt.</p>
             </div>
           </form>
 
@@ -841,6 +955,11 @@
               </div>
             </div>
             <div class="recap" id="recap"></div>
+            <div class="depot-panel" id="depot-panel">
+              <h4>Dernière étape&nbsp;: paie ton dépôt pour réserver ta place</h4>
+              <p id="depot-panel-text"></p>
+              <p>Envoie ton virement Interac à <span class="interac-mail">alexandre.guimond@hotmail.com</span> et inscris ton nom complet et ta formule dans le champ message du virement. Ton inscription est confirmée dès la réception du dépôt&nbsp;; l'académie te recontacte ensuite pour le solde et la suite.</p>
+            </div>
             <div class="confirm-actions">
               <button type="button" class="btn btn-dark" id="btn-copy">Copier ma demande</button>
               <button type="button" class="btn btn-line" id="btn-download">Télécharger (.txt)</button>
@@ -857,7 +976,7 @@
     <footer>
       <div class="wrap">
         <div class="f-brand">VOCALEKS</div>
-        <p>Académie de chant en ligne, par Alexandre Guimond — «&nbsp;Trouve ta voix. Assume ta scène.&nbsp;»</p>
+        <p>VOCALEKS • Académie de Chant, par Alexandre Guimond — «&nbsp;Trouve ta voix. Assume ta scène.&nbsp;»</p>
         <p>Prix en dollars canadiens, taxes en sus. Les places Coaching+ sont limitées à 10.</p>
       </div>
     </footer>
@@ -890,6 +1009,68 @@
           return el ? el.value.trim() : '';
         }
 
+        var INTERAC_EMAIL = 'alexandre.guimond@hotmail.com';
+        function fmt(n) {
+          if (Math.round(n) === n) return n + ' $';
+          return n.toFixed(2).replace('.', ',') + ' $';
+        }
+        function depotInfo() {
+          var f = radioValue('formule');
+          if (!f) return null;
+          var niv = radioValue('niveau');
+          var d = null;
+          if (f.indexOf('Cohorte fondatrice') === 0) d = { base: fmt(39) + ' (premier mois)', depot: 39 * 0.25 };
+          else if (f.indexOf('Cours privé') === 0) d = { base: fmt(29), depot: 29 * 0.25 };
+          else if (f.indexOf('Accès capsules vidéo') === 0) d = { base: fmt(52) + ' (premier mois)', depot: 52 * 0.25 };
+          else if (f.indexOf('Académie —') === 0) d = { base: fmt(59) + ' (premier mois)', depot: 59 * 0.25 };
+          else if (f.indexOf('Coaching+ —') === 0) d = { base: fmt(119) + ' (premier mois)', depot: 119 * 0.25 };
+          else if (f.indexOf('Parcours complet') === 0) d = { fourchette: [249, 449], suffixe: ' selon le niveau' };
+          else if (f.indexOf('Session en ligne') === 0) d = { parNiveau: { 'Débutant': 36, 'Intermédiaire': 44, 'Avancé': 52 } };
+          else if (f.indexOf('Coaching privé en ligne') === 0) d = { parNiveau: { 'Débutant': 23, 'Intermédiaire': 33, 'Avancé': 44 } };
+          else if (f.indexOf('Capsule coaching') === 0) d = { base: fmt(10), depot: 10 * 0.25 };
+          else if (f.indexOf('Module à la carte') === 0) d = { fourchette: [49, 89], suffixe: ' selon le module' };
+          else if (f.indexOf('Atelier mensuel') === 0) d = { base: fmt(25), depot: 25 * 0.25 };
+          else if (f.indexOf('Service de composition') === 0) d = { surMesure: true };
+          else if (f.indexOf('Mini-cours gratuit') === 0) d = { gratuit: true };
+          if (!d) return null;
+          if (d.surMesure) return { surMesure: true, baseTxt: 'sur mesure — tarif à confirmer selon ton projet', depotTxt: '25 % du total confirmé' };
+          if (d.gratuit) return { gratuit: true, baseTxt: 'gratuit', depotTxt: '0 $' };
+          if (d.fourchette) return {
+            baseTxt: fmt(d.fourchette[0]) + ' à ' + fmt(d.fourchette[1]) + (d.suffixe || ''),
+            depotTxt: fmt(d.fourchette[0] * 0.25) + ' à ' + fmt(d.fourchette[1] * 0.25)
+          };
+          if (d.parNiveau) {
+            if (niv && d.parNiveau[niv]) return { baseTxt: fmt(d.parNiveau[niv]) + ' (' + niv + ')', depotTxt: fmt(d.parNiveau[niv] * 0.25) };
+            return { besoinNiveau: true, baseTxt: 'selon ton niveau', depotTxt: 'selon ton niveau' };
+          }
+          return { baseTxt: d.base, depotTxt: fmt(d.depot) };
+        }
+
+        var depotBox = document.getElementById('depot-box');
+        function refreshDepotBox() {
+          var info = depotInfo();
+          if (!info) {
+            depotBox.innerHTML = '<strong>Dépôt à l\'inscription&nbsp;: 25&nbsp;% du total</strong>, par virement Interac. Choisis une formule ci-dessus pour voir le montant exact de ton dépôt.';
+            return;
+          }
+          if (info.gratuit) {
+            depotBox.innerHTML = '<strong>Aucun dépôt</strong> pour le mini-cours gratuit.';
+            return;
+          }
+          if (info.surMesure) {
+            depotBox.innerHTML = '<strong>Service de composition — projet sur mesure&nbsp;:</strong> le tarif est confirmé selon ton projet, puis le dépôt de <span class="depot-amount">25&nbsp;% du total confirmé</span> réserve le début du travail, par virement Interac.';
+            return;
+          }
+          if (info.besoinNiveau) {
+            depotBox.innerHTML = 'Dépôt à l\'inscription&nbsp;: <span class="depot-amount">25&nbsp;% du total</span> — le prix dépend de ton niveau, choisis-le à l\'étape 2 pour voir le montant exact. Paiement par virement Interac.';
+            return;
+          }
+          depotBox.innerHTML = 'Dépôt à l\'inscription&nbsp;: <span class="depot-amount">' + info.depotTxt + '</span> — 25&nbsp;% de ' + info.baseTxt + ', par virement Interac. Le solde est payable selon les modalités confirmées par l\'académie.';
+        }
+        form.querySelectorAll('input[name="formule"], input[name="niveau"]').forEach(function (r) {
+          r.addEventListener('change', refreshDepotBox);
+        });
+
         form.addEventListener('submit', function (ev) {
           ev.preventDefault();
           var ok = true;
@@ -912,7 +1093,7 @@
           form.querySelectorAll('input[name="dispo"]:checked').forEach(function (c) { dispos.push(c.value); });
 
           var lines = [];
-          lines.push('INSCRIPTION VOCALEKS — Académie de chant');
+          lines.push('INSCRIPTION VOCALEKS • Académie de Chant');
           lines.push('----------------------------------------');
           lines.push('Nom : ' + val('f-prenom') + ' ' + val('f-nom'));
           lines.push('Courriel : ' + email);
@@ -926,9 +1107,30 @@
           if (val('f-objectifs')) lines.push('Objectifs : ' + val('f-objectifs'));
           if (dispos.length) lines.push('Disponibilités : ' + dispos.join(', '));
           if (val('f-source')) lines.push('Connu via : ' + val('f-source'));
+          var info = depotInfo();
+          lines.push('');
+          if (info && info.gratuit) {
+            lines.push('Dépôt à l\'inscription : aucun (mini-cours gratuit)');
+          } else if (info) {
+            lines.push('Total de la formule : ' + info.baseTxt);
+            lines.push('Dépôt à l\'inscription (25 %) : ' + info.depotTxt);
+            lines.push('Dépôt par virement Interac à : ' + INTERAC_EMAIL);
+            lines.push('(inscrire ton nom et ta formule dans le message du virement)');
+          }
           lastText = lines.join('\n');
 
           recap.textContent = lastText;
+          var panel = document.getElementById('depot-panel');
+          var panelText = document.getElementById('depot-panel-text');
+          if (info && info.gratuit) {
+            panel.style.display = 'none';
+          } else if (info && info.surMesure) {
+            panel.style.display = '';
+            panelText.innerHTML = 'Service de composition sur mesure&nbsp;: l\'académie te confirmera d\'abord le tarif total de ton projet. Le dépôt à payer ensuite sera de <span class="depot-amount">25&nbsp;% du total confirmé</span>.';
+          } else if (info) {
+            panel.style.display = '';
+            panelText.innerHTML = 'Dépôt à payer&nbsp;: <span class="depot-amount">' + info.depotTxt + '</span> — 25&nbsp;% de ' + info.baseTxt + '.';
+          }
           form.style.display = 'none';
           confirmBox.classList.add('show');
           confirmBox.scrollIntoView({ behavior: 'smooth', block: 'start' });
